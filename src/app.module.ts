@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-//import { ServeStaticModule } from '@nestjs/serve-static';
+
 
 import { ProductsModule } from './products/products.module';
 import { CommonModule } from './common/common.module';
@@ -21,6 +21,8 @@ import { ServicioModule } from './servicio/servicio.module';
 import { SeccionModule } from './seccion/seccion.module';
 import { PersonalModule } from './personal/personal.module';
 import { GrupoModule } from './grupo/grupo.module';
+import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
   imports: [
@@ -43,9 +45,9 @@ import { GrupoModule } from './grupo/grupo.module';
      // synchronize: true,
     }),
 
-/*     ServeStaticModule.forRoot({
+     ServeStaticModule.forRoot({
       rootPath: join(__dirname,'..','public'), 
-    }), */
+    }), 
 
     ProductsModule,
 
