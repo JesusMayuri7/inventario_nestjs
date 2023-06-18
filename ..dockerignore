@@ -1,0 +1,13 @@
+.git
+node_modules
+node_modules/
+/node_modules
+npm-debug.log
+.env
+dist
+postgres
+public
+static
+test
+Dockerfile
+.dockerignore

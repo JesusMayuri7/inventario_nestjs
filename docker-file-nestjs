@@ -1,0 +1,16 @@
+
+# Building layer
+FROM node:16.16.0-alpine
+
+RUN npm prune --production
+
+COPY package*.json ./
+RUN npm install -g npm@9.7.1 --production
+COPY . .
+RUN npm run build
+
+# Expose application port
+EXPOSE 3000
+
+# Start application
+CMD [ "node", "dist/main.js" ]
